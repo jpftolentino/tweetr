@@ -1,0 +1,32 @@
+/*
+
+  1. Rounded borders
+  2. Line below Heading
+  3. right alighned counter
+  4. Padded text inside textarea
+  5. Spaced by 2em on either side and centered
+*/
+
+main .new-tweet {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 0 3% 3% 3%;
+}
+
+main .new-tweet h2{
+  border-bottom: 1px solid;
+}
+
+main .new-tweet .counter{
+  float: right;
+  font-style: italic;
+}
+
+/*main .new-tweet input {
+  float: left;
+}
+*/
+main .new-tweet textarea {
+  padding: 3px 0 3px 0;
+  width: 100%;
+}
