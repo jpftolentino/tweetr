@@ -12,7 +12,7 @@ main .new-tweet {
   border-radius: 10px;
   padding: 0 3% 3% 3%;
   margin: 2em;
-  background-color: #00a087;
+  background-color: #EEEEEE;
 }
 
 main .new-tweet h2{
@@ -29,6 +29,8 @@ main .new-tweet textarea {
   padding: 2%;
   width: 100%;
 }
+
+/*~~~~~~~~~~ILLEGAL WORD COUNT~~~~~~~~~~~ */
 
 main .new-tweet .invalid{
   color: red;

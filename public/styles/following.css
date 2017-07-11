@@ -1,0 +1,66 @@
+main .following {
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 2em;
+  /*padding: 3% 3% 3% 3%;*/
+  background-color: #EEEEEE;
+}
+
+main .fheader{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 1px;
+  background-color: #00a087;
+  display: inline-block;
+  width: 100%;
+}
+
+main .avatar{
+  border-radius: 25px;
+  position: relative;
+  padding: 3% 3%;
+  float: left;
+}
+
+main .name{
+  position: relative;
+  font-weight: bold;
+  font-size: 150%;
+  margin-top: 3%;
+  margin-left: 17%;
+  color: #FFFFFF;
+}
+
+main .handle{
+  position: relative;
+  font-weight: normal;
+  font-size: 80%;
+  float: right;
+  color: #FFFFFF;
+  margin-right: 3%;
+  line-height: 20%;
+
+}
+
+main .following article{
+  position: relative;
+  clear: both;
+  padding: 8% 3%;
+  font-size: 120%;
+  background-color: #FFFFFF;
+}
+
+main footer{
+  position: relative;
+  padding: 3% 2%;
+  font-size: 70%;
+  border-top: 1px solid;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-color: #EEEEEE;
+  background-color: #FFFFFF;
+}
+
+.fa:hover{
+  color: #EEEEEE;
+}
