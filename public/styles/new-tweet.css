@@ -25,11 +25,11 @@ main .new-tweet .counter{
   font-style: italic;
 }
 
-/*main .new-tweet input {
-  float: left;
-}
-*/
 main .new-tweet textarea {
   padding: 2%;
   width: 100%;
+}
+
+main .new-tweet .invalid{
+  color: red;
 }

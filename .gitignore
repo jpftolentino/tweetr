@@ -57,8 +57,5 @@ typings/
 # dotenv environment variables file
 .env
 
-# ignores PSEUDO CODE PAGE
+#PSEUDO_CODE
 PSEUDO_CODE
-
-# test.js is for testing out functions quickly
-test.js
