@@ -42,7 +42,22 @@
 
         <script>
           $('form').on('submit', function (event) {
-              event.preventDefault();
+              let textCount =  $('textarea').val().length;
+              if(textCount === 0){
+                event.preventDefault();
+                alert('Cannot Tweet empty field!');
+              } else if ( textCount > 140){
+                event.preventDefault();
+                alert('Sorry! Your Tweet is too long!');
+              } else if (textCount === null){
+                event.preventDefault();
+                alert('Sorry illegal Tweet!');
+              } else {
+                $.ajax({
+                  method: 'POST',
+                  url: '/tweets'
+                })
+              }
           });
         </script>
 

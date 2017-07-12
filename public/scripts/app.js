@@ -63,8 +63,6 @@ function loadTweets(){
     url: '/tweets',
     type: 'GET'
   }).then(function (jsonContent) {
-    var test = JSON.stringify(jsonContent);
-    console.log(jsonContent);
     renderTweets(jsonContent);
   });
 }
