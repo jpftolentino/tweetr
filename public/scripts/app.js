@@ -51,76 +51,50 @@ var data = [
   }
 ];
 
-function renderTweets(data) {
-
-  // console.log(data[i]);
-  // loops through tweets
-  for( var i = 0; i < data.length; i++){
-
-    // console.log(data.length);
-    // console.log(i);
-    // console.log(data[i]);
-
-    // calls createTweetElement for each tweet
-    var $tweetContainer = createContainer(data[i]);
-    // var $tweetfHeader = createfHeader(data[i]);
-    var $tweetAvatar = createAvatar(data[i]);
-    var $tweetName = createName(data[i]);
-    var $tweetHandle = createHandle(data[i]);
-    var $tweet = createTweet(data[i]);
-    var $tweetDate = createDate(data[i]);
-
-    // takes return value and appends it to the tweets container
-    $('main').append($tweetContainer);
-    // $('.following').append($tweetfHeader);
-    $('.following').append($tweetAvatar); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-    $('.following').append($tweetName);
-    $('.following').append($tweetHandle);
-    $('.following').append($tweet);
-    $('.following').append($tweetDate);
+function renderTweets(tweets) {
+  for(var i in tweets){
+    let renderTweets = createTweetElement(tweets[i])
+    $('main').append(renderTweets);
   }
 }
 
-function createContainer(tweetData) {
-  var $tweetContainer = $('<section>').addClass('following');
-  return $tweetContainer;
+function loadTweets(){
+  $.ajax({
+    url: '/tweets',
+    type: 'GET'
+  }).then(function (jsonContent) {
+    var test = JSON.stringify(jsonContent);
+    console.log(jsonContent);
+    renderTweets(jsonContent);
+  });
 }
 
-// function createfHeader (tweetData) {
-//   var $tweetfHeader = $("<span></span>").addClass('fheader');
-//   return $tweetfHeader;
-// }
+function createTweetElement(tweets){
 
-function createAvatar (tweetData) {
-  let tweetAvatar = tweetData['user']['avatars']['small'];
+  let tweetAvatar = tweets['user']['avatars']['small'];
+  let tweetName = tweets['user']['name'];
+  let tweetHandle = tweets['user']['handle'];
+  let tweetContent = tweets['content']['text'];
+  let tweetDate = tweets['created_at'];
+
   var $tweetAvatar = $('<img src=' + tweetAvatar + '>').addClass('avatar');
-  return $tweetAvatar;
-}
-
-function createName (tweetData) {
-  console.log(tweetData);
-  let tweetName = tweetData['user']['name'];
   var $tweetName = $('<div>' + tweetName + '</div>').addClass('name');
-  return $tweetName;
-}
-
-function createHandle (tweetData) {
-  let tweetHandle = tweetData['user']['handle'];
   var $tweetHandle = $('<div>' + tweetHandle + '</div>').addClass('handle');
-  return $tweetHandle;
+  var $tweetContent = $("<article>" + tweetContent + '</article>').addClass("tweet");
+  var $tweetDate = $("<footer>" + tweetDate + "</footer>");
+  var $tweetConsHolder = $("<span>");
+  var $tweetIconsFlag = $("<i>").addClass("fa fa-flag");
+  var $tweetIconsRetweet = $("<i>").addClass("fa fa-retweet");
+  var $tweetIconsHeart = $("<i>").addClass("fa fa-heart");
+
+  var footer = $tweetDate.append($tweetIconsHeart, $tweetIconsRetweet, $tweetIconsFlag);
+  var $tweets = $('<section>').addClass('following').append($tweetAvatar, $tweetName, $tweetHandle, $tweetContent, footer);
+
+  return $tweets;
 }
 
-function createTweet (tweetData) {
-  let tweetContent = tweetData['content']['text'];
-  var $tweet = $("<article>" + tweetContent + '</article>').addClass("tweet");
-  return $tweet;
-}
 
-function createDate (tweetData) {
-  let tweetDate = tweetData['created_at'];
-  var $tweetDate = $("<footer>" + tweetDate + '<span class=\'icons\'><i class=\"fa fa-flag\"></i><i class=\"fa fa-retweet\"></i><i class=\"fa fa-heart\"></i></span>' + "</footer>");
-  return $tweetDate;
-}
+//ADD HOVER TO CSS!!!
 
 function iconHighlight(){
   $('main section footer .icons').show();
@@ -136,8 +110,9 @@ $( document ).ready(function() {
 
   $('section .following').on('mouseover', iconHighlight);
   $('section .following').on('mouseout', iconHide);
-  // Test / driver code (temporary)
-  renderTweets(data);
 
+  loadTweets();
+
+  // renderTweets(data);
 });
 

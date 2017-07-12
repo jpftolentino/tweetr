@@ -40,6 +40,12 @@
           <span class="counter">140</span>
         </form>
 
+        <script>
+          $('form').on('submit', function (event) {
+              event.preventDefault();
+          });
+        </script>
+
       </section>
     </main>
   </body>

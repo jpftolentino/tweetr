@@ -4,23 +4,23 @@ main .following {
   border-radius: 10px;
   margin: 2em;
   /*padding: 3% 3% 3% 3%;*/
-  background-color: #EEEEEE;
+
+  background-color: #00a087;
   opacity: 1;
 }
 
-main .following :hover{
+/*main .following :hover{
   position: relative;
   opacity: 0.5;
-}
+}*/
 
-main .fheader{
+/*main .fheader{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border: 1px;
-  background-color: #00a087;
   display: inline-block;
   width: 100%;
-}
+}*/
 
 main .avatar{
   border-radius: 25px;
@@ -68,8 +68,8 @@ main footer{
   background-color: #FFFFFF;
 }
 
-main .icons{
+main footer i{
   position: relative;
   float: right;
-  /*display: none;*/
+  display: none;
 }
