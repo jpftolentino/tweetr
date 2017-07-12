@@ -6,6 +6,7 @@
   padding: 0 2em 0 2em;
   background-color: #00a087;
   color: #e8fdff;
+  z-index: 2000;
 }
 
 #nav-bar .logo {

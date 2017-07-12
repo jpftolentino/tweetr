@@ -1,9 +1,16 @@
 main .following {
+  clear: both;
   border: 1px solid;
   border-radius: 10px;
   margin: 2em;
   /*padding: 3% 3% 3% 3%;*/
   background-color: #EEEEEE;
+  opacity: 1;
+}
+
+main .following :hover{
+  position: relative;
+  opacity: 0.5;
 }
 
 main .fheader{
@@ -61,6 +68,8 @@ main footer{
   background-color: #FFFFFF;
 }
 
-.fa:hover{
-  color: #EEEEEE;
+main .icons{
+  position: relative;
+  float: right;
+  /*display: none;*/
 }
