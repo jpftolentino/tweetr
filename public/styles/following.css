@@ -55,6 +55,7 @@ main .following article{
   padding: 8% 3%;
   font-size: 120%;
   background-color: #FFFFFF;
+  word-wrap: break-word;
 }
 
 main footer{

@@ -54,7 +54,7 @@ var data = [
 function renderTweets(tweets) {
   for(var i in tweets){
     let renderTweets = createTweetElement(tweets[i])
-    $('main').append(renderTweets);
+    $('section').after(renderTweets);
   }
 }
 
@@ -78,7 +78,7 @@ function createTweetElement(tweets){
   var $tweetAvatar = $('<img src=' + tweetAvatar + '>').addClass('avatar');
   var $tweetName = $('<div>' + tweetName + '</div>').addClass('name');
   var $tweetHandle = $('<div>' + tweetHandle + '</div>').addClass('handle');
-  var $tweetContent = $("<article>" + tweetContent + '</article>').addClass("tweet");
+  var $tweetContent = $("<article>").addClass("tweet").text(tweetContent);
   var $tweetDate = $("<footer>" + tweetDate + "</footer>");
   var $tweetConsHolder = $("<span>");
   var $tweetIconsFlag = $("<i>").addClass("fa fa-flag");
@@ -86,7 +86,7 @@ function createTweetElement(tweets){
   var $tweetIconsHeart = $("<i>").addClass("fa fa-heart");
 
   var footer = $tweetDate.append($tweetIconsHeart, $tweetIconsRetweet, $tweetIconsFlag);
-  var $tweets = $('<section>').addClass('following').append($tweetAvatar, $tweetName, $tweetHandle, $tweetContent, footer);
+  var $tweets = $('<article>').addClass('following').append($tweetAvatar, $tweetName, $tweetHandle, $tweetContent, footer);
 
   return $tweets;
 }
@@ -103,6 +103,21 @@ function iconHide(){
   $('main section footer .icons').hide();
 }
 
+function toggleTweet(){
+  let goFocus = ($('.new-tweet').is(':visible'));
+
+  if(!goFocus){
+    $('.new-tweet').slideToggle(900);
+    $('textarea').focus();
+    focusState = 1;
+  } else {
+    $('.new-tweet').slideToggle(900);
+    $('textarea').blur();
+    focusState = 0;
+  }
+
+}
+
 $( document ).ready(function() {
   console.log('Testing to see if app.js is being invoked');
 
@@ -111,6 +126,32 @@ $( document ).ready(function() {
 
   loadTweets();
 
+  $('form').on('submit', function (event) {
+      event.preventDefault();
+
+      let textCount =  $('textarea').val().length;
+      if(textCount === 0){
+        alert('Cannot Tweet empty field!');
+      } else if ( textCount > 140){
+        alert('Sorry! Your Tweet is too long!');
+      } else if (textCount === null){
+        alert('Sorry illegal Tweet!');
+      } else {
+        $.ajax({
+          method: 'POST',
+          url: '/tweets',
+          data: $(this).serialize()
+        }).then(function (){
+          $('.following').remove();
+          loadTweets();
+          $('textarea').val('');
+          $('.counter').text('');
+          $('.counter').text(140);
+        });
+      }
+  });
+
+  $('button').on('click', toggleTweet);
   // renderTweets(data);
 });
 
