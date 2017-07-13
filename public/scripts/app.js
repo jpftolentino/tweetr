@@ -109,11 +109,9 @@ function toggleTweet(){
   if(!goFocus){
     $('.new-tweet').slideToggle(900);
     $('textarea').focus();
-    focusState = 1;
   } else {
     $('.new-tweet').slideToggle(900);
     $('textarea').blur();
-    focusState = 0;
   }
 
 }
@@ -154,4 +152,3 @@ $( document ).ready(function() {
   $('button').on('click', toggleTweet);
   // renderTweets(data);
 });
-
