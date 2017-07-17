@@ -1,11 +1,4 @@
-/*
-
-  1. Rounded borders
-  2. Line below Heading
-  3. right alighned counter
-  4. Padded text inside textarea
-  5. Spaced by 2em on either side and centered
-*/
+/*~~~~~~~~~~ TWEET CONTAINER ~~~~~~~~~~~ */
 
 main .new-tweet {
   border: 1px solid;

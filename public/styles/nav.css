@@ -1,3 +1,6 @@
+/*~~~~~~~~~~ NAV BAR~~~~~~~~~~~ */
+
+
 #nav-bar{
   position: fixed;
   top: 0;
@@ -21,6 +24,9 @@
   font-size: 210%;
   line-height: 230%;
 }
+
+/*~~~~~~~~~~ BUTTON INSIDE NAV BAR~~~~~~~~~~~ */
+
 
 button {
   float: right;

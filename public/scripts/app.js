@@ -1,8 +1,5 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+
+ //creates an instance of each tweet inside mongodb database
 function renderTweets(tweets) {
   for(var i in tweets){
     let renderTweets = createTweetElement(tweets[i])
@@ -10,6 +7,7 @@ function renderTweets(tweets) {
   }
 }
 
+//loads tweet into html page
 function loadTweets(){
   $.ajax({
     url: '/tweets',
@@ -19,6 +17,7 @@ function loadTweets(){
   });
 }
 
+//Shows how old tweets are from current date
 function parseDate(tweetDate){
 
   console.log(tweetDate);
@@ -74,6 +73,7 @@ function parseDate(tweetDate){
   return date;
 }
 
+//Builds tweet structure for html page
 function createTweetElement(tweets){
 
   let tweetAvatar = tweets['user']['avatars']['small'];
@@ -103,9 +103,7 @@ function createTweetElement(tweets){
   return $tweets;
 }
 
-
-//ADD HOVER TO CSS!!!
-
+//toggles tweet area
 function toggleTweet(){
   let goFocus = ($('.new-tweet').is(':visible'));
 
@@ -118,6 +116,7 @@ function toggleTweet(){
   }
 }
 
+//Prevent user from tweeting more than 140 words or null
 function tweetAsUser(){
 
   $('form').on('submit', function (event) {
@@ -147,8 +146,8 @@ function tweetAsUser(){
 
 }
 
+//Once all functionality is loaded execute
 $( document ).ready(function() {
-  console.log('Testing to see if app.js is being invoked');
   loadTweets();
   $('button').on('click', toggleTweet);
   tweetAsUser();

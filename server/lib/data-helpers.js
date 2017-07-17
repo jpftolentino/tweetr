@@ -17,24 +17,9 @@ module.exports = function makeDataHelpers(db) {
           return callback(err);
         }
 
-        // console.log(tweets);
         callback(null, tweets);
       });
     },
-
-    // get all users in db
-    // getUsers: function(callback) {
-    //   db.collection('users').find().toArray((err, users) => {
-    //     if (err) {
-    //       return callback(err);
-    //     }
-
-    //     callback(null, users);
-    //   });
-    // }
-
-
-
 
   };
 }
