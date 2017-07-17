@@ -4,9 +4,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 
-!["screenshot description"](https://github.com/jpftolentino/TinyApp/blob/master/docs/TinyAppMain.png?raw=true)
-!["screenshot description"](https://github.com/jpftolentino/TinyApp/blob/master/docs/loggedinTinyApp.png?raw=true)
-!["screenshot description"](https://github.com/jpftolentino/TinyApp/blob/master/docs/login.png?raw=true)
+!["screenshot description"](https://github.com/jpftolentino/tweetr/blob/master/docs/TweeterGit1.png?raw=true)
 
 ## Getting Started
 
