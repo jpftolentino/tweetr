@@ -27,6 +27,7 @@ function parseDate(tweetDate){
   let date = "";
 
   if(dateInSeconds < 60){
+    let dateInSeconds = Math.round(tweetDate/1000);
     if(dateInSeconds > 1){
       date = (dateInSeconds + " seconds ago");
     } else {
