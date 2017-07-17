@@ -15,18 +15,21 @@ html {
  */
 
 body {
-  margin: 0;
+  margin: auto;
   color: #244751;
   background-color: #eee;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
 .container {
-  margin: auto;
+  margin: 8% 33% 2%;
   background-color: #ffffff;
-  padding-top: 140px;
-  padding-bottom: 30%;
-  width: 450px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 34%;
+
+  border-radius: 10px;
+  background-color: #007866;
 }
 
 

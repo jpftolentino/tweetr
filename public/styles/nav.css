@@ -24,4 +24,20 @@
 
 button {
   float: right;
+
+  margin-top: 0.5%;
+  margin-right: 3%;
+
+  border: 2px solid;
+  border-color: #000000;
+  border-radius: 10px;
+
+  height: 80%;
+  width: 10%;
+
+  background-color: #FFFFFF;
+}
+
+button:hover {
+  background-color: #00eec9;
 }
