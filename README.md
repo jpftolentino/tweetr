@@ -1,7 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone. It is a Single Page Aplication that uses jQuery and Ajax calls to render the page.
-It uses mongoDb as it's main datasource and it has RESTful routes implemented using the Express API.
+A  Single Page Application that uses jQuery and Ajax calls to render the page. It uses MongoDB as it's main data source and it has RESTful routes implemented using the Express API.
 
 ## Final Product
 
